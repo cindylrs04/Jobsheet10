@@ -44,13 +44,6 @@ public class BisokopWithScanner08 {
                     }
                     break;
                 case 2:
-                    for (int i = 0; i < penonton.length; i++) {
-                        for (int j = 0; j < penonton[0].length; j++) {
-                            if (penonton[i][j] == null) {
-                                penonton[i][j] = "*";
-                            }
-                        }
-                    }
                     System.out.println("Daftar penonton :");
                     for (int i = 0; i < penonton.length; i++) {
                         System.out
