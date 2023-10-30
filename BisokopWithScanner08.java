@@ -26,13 +26,17 @@ public class BisokopWithScanner08 {
                         kolom = sc.nextInt();
 
                         if (baris <= 4 && kolom <= 2) {
-                            penonton[baris - 1][kolom - 1] = nama;
+                            if (penonton[baris - 1][kolom - 1] == null) {
+                                penonton[baris - 1][kolom - 1] = nama;
 
-                            System.out.print("Input penonton lainnya? (y/n) : ");
-                            next = sc2.nextLine();
+                                System.out.print("Input penonton lainnya? (y/n) : ");
+                                next = sc2.nextLine();
 
-                            if (next.equalsIgnoreCase("n")) {
-                                break;
+                                if (next.equalsIgnoreCase("n")) {
+                                    break;
+                                }
+                            } else {
+                                System.out.println("Kursi telah terisi");
                             }
                         } else {
                             System.out.println("Kursi tidak tersedia");
@@ -40,6 +44,13 @@ public class BisokopWithScanner08 {
                     }
                     break;
                 case 2:
+                    for (int i = 0; i < penonton.length; i++) {
+                        for (int j = 0; j < penonton[0].length; j++) {
+                            if (penonton[i][j] == null) {
+                                penonton[i][j] = "*";
+                            }
+                        }
+                    }
                     System.out.println("Daftar penonton :");
                     for (int i = 0; i < penonton.length; i++) {
                         System.out
